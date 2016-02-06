@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Guessing Color game</title>
+		<script type="text/javascript">
+			
+			var target;
+			var guess_input_color;
+			var guess_input;
+			var finished = false;
+			var guesses = 0;
+			var colors = ["blue","cyan","gold","gray","green","magenta","orange","red","white","yellow"];
+			
+			function do_game(){
+
+				
+				while(!finished){
+					guess_input_color = "I am thinking of one of this colors \n\n" +
+					colors.join();
+					
+					guess_input = parseInt(guess_input_color);
+					guesses +=1;
+					finished = check_guess();
+					if(finished){
+						document.getElementById("bodyhtml").style.backgroundColor = "red";
+					}
+				}
+			}
+			
+			function check_guess(){
+				if(isNan(guess_input)){
+					alert("You have enter a non number");
+					return false;
+				}
+				if(isNan(guess_input)){
+					alert("You have enter a non number");
+					return false;
+				}
+				if(isNan(guess_input)){
+					alert("You have enter a non number");
+					return false;
+				}
+				if(isNan(guess_input)){
+					alert("You have enter a non number");
+					return false;
+				}
+				
+				alert("Is that one!");
+				
+				
+				return true;
+				
+			}
+		
+		</script>
+	</head>
+	<body onload="do_game()" id="bodyhtml">
+	
+	
+	</body>
+</html>

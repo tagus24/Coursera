@@ -1,0 +1,9 @@
+<html>
+	<head>
+		<title>Guessing Color game</title>
+	</head>
+	<body onload="do_game()">
+	
+	
+	</body>
+</html>

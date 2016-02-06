@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+E:\Projects_Eclipse\Coursera\FullStackDeveloper\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1450329085.index
+1776186458.index
+381954616.index
+642745496.index
+3108153281.index
+123349364.index
+1227249628.index

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Tiago Pinho">
+	<title>Dating Website</title>
+	
+	<style>
+		fieldset {background:lightyellow}
+	</style>
+</head>
+	
+<body>
+	<h1>Please Enter Your Details For Our Dating Website</h1>
+	
+	<form method="POST" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data">
+	
+		<div>
+			<fieldset>
+			    <legend>Your Face</legend>
+			    	<label for="imagepic">Your image:</label>
+			        <input type="file" name="pic" accept="image/*" id="imagepic" required><br>
+			    	Image Preview: <img id="preview"/><br>
+	 		 </fieldset>
+ 		 </div>
+ 		 <div>
+			<fieldset>
+			    <legend>Your General Details</legend>
+			    
+			    <label for="name">Name:</label>
+			    <input type="text" id="name" name="name" required><br>
+			    
+			    Gender:
+			    <input type="radio" name="gender" id="male" value="male" required><label for="male">Male</label>
+			    <input type="radio" name="gender" id="female" value="female"><label for="male">Female</label><br>
+			    
+			    <label for="age">Age:</label>
+			    <input type="number" id="age" name="age" required><br>
+			    
+			    <label for="birth">Date of birth:</label>
+			    <input type="date" id="birth" name="birth" required><br>
+			    
+				<label for="color">Favorite color:</label>
+			    <input type="color" id="color" name="color"><br>
+			    
+			    <label for="country">Which country:</label>
+			    <select id="country" name="country" required>
+			      <option value="">-- select one please --</option>
+				  <option value="Portugal">Portugal</option>
+				  <option value="Spain">Spain</option>
+				  <option value="Ireland">Ireland</option>
+				  <option value="England">England</option>
+				  <option value="Germany">Germany</option>
+				  <option value="France">France</option>
+				</select> 
+	 		 </fieldset>
+ 		 </div>
+ 		 <div>
+			<fieldset>
+			    <legend>Your Indicators</legend>
+			    
+			    <label for="height">Height:</label>
+			    <input type="range" id="height" name="height" min="0" max="100"><br>
+			    <label for="salary">Salary:</label>
+			    <input type="range" id="salary" name="salary" min="0" max="100"><br>
+	 		 </fieldset>
+ 		 </div>
+ 		 <div>
+			<fieldset>
+			    <legend>Your Concact Information</legend>
+			    
+			    <label for="email">Email:</label>
+			    <input type="email" id="email" name="email" required><br>
+			    
+			    <label for="mobile">Mobile:</label>
+			    <input type="tel" id="mobile" name="mobile" required><br>
+			    
+			    <label for="imagepic">Address:</label>
+			    <textarea rows="1" cols="10" required> </textarea><br>
+			    	Method to contact you
+				    <input type="checkbox" name="contactmethod" value="email" id="emailcontact">
+				    <label for="emailcontact">Email</label>
+				    <input type="checkbox" name="contactmethod" value="whatsapp" id="whatsapp">
+				    <label for="whatsapp">Whatsapp</label>
+				    <input type="checkbox" name="contactmethod" value="appchat" id="appchat"> 
+				    <label for="appchat">In-app chat</label>
+	 		 </fieldset>
+ 		 </div>
+ 		 
+ 		 <input type="submit" value="Submit"/>
+
+	</form>
+
+</body>
+</html>
