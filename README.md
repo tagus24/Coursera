@@ -1,2 +1,0 @@
-# Coursera
-For Coursera courses
