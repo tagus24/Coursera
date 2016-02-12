@@ -65,29 +65,46 @@
                     <li><a href="contactus.html"><span class="fa fa-envelope-o"
                          aria-hidden="true"></span> Contact</a></li>
                 </ul>
-                
-                <form class="navbar-form navbar-right" role="search">
-					  <div class="form-group">
-					    <input type="email" class="form-control input-sm" id="email" placeholder="Email">
-					  </div>
-					   <div class="form-group">
-                            <input type="password" class="form-control input-sm" id="password1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="approve" value=""> 
-                                <span style="color:white">Remember me</span>
-                            </label>
-                        </div>
-					  <button type="submit" class="btn btn-info">Sign in</button>
-				</form>
-                
+                 <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
             </div>
-           
-            
-         
         </div>
     </nav>  
+    
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login </h4>
+            </div>
+            <div class="modal-body">
+
+			 <form class="form-inline" >
+				  <div class="form-group">
+				    <input type="email" class="form-control input-sm" id="email" placeholder="Email">
+				  </div>
+				   <div class="form-group">
+                           <input type="password" class="form-control input-sm" id="password1" placeholder="Password">
+                       </div>
+                       <div class="form-group">
+                           <label class="checkbox-inline">
+                               <input type="checkbox" name="approve" value=""> 
+                               <span style="color:white">Remember me</span>
+                           </label>
+                       </div>
+				  <button type="submit" class="btn btn-info">Sign in</button>
+				  <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+			</form>
+
+            </div>
+        </div>
+        </div>
+    </div>
         
     <header class="jumbotron">
 
@@ -107,7 +124,9 @@
                  <div class="col-xs-12 col-sm-2">
                 	<p style="padding:20px;"></p>
                 	<p style="padding-top:50px;">
-                        <a id="rsrvButton" type="button" class="btn btn-warning btn-block" role="button" href="#reserveDiv">Reserve Table</a>
+                        <a type="button" class="btn btn-warning btn-block" data-toggle="tooltip" title="Or Call us at +852 12345678"
+                     data-placement="bottom" href="#reserveform">
+
                     </p>
                 </div>
             </div>
@@ -246,10 +265,6 @@
                 </div>
             </div>
         </div>
-        
-        
-        
-        
     </div>
 
     <footer>
@@ -298,6 +313,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    
+     <script>
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+         });
+    </script>
 
 </body>
 
