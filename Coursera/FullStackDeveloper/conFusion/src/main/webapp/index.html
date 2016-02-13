@@ -11,11 +11,14 @@
     <title>Ristorante Con Fusion</title>
     
         <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"> 
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">     
     <link href="css/bootstrap-social.css" rel="stylesheet">
-    <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/mystyles_old.css" rel="stylesheet">
+    
+ 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,7 +69,7 @@
                          aria-hidden="true"></span> Contact</a></li>
                 </ul>
                  <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <li><a id="loginButton">
                     <span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -106,6 +109,7 @@
         </div>
     </div>
     
+    <!-- Modal Reservation of table -->
      <div id="ReservationModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
         <!-- Modal content-->
@@ -199,7 +203,7 @@
                 </div>
                  <div class="col-xs-12 col-sm-2">
                 	<p style="padding:40px;"></p>
-                        <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#ReservationModal" >Reserve Table</a>
+                        <a type="button" class="btn btn-warning btn-block" id="reserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -270,7 +274,14 @@
 		                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		                    <span class="sr-only">Next</span>
 		                </a>
-		
+		                <div class="btn-group" id="carouselButtons">
+			                    <button class="btn btn-danger btn-xs" id="carousel-pause">
+			                	    <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+			                    </button>
+			                    <button class="btn btn-danger btn-xs" id="carousel-play">
+			                	    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+			                    </button>
+                		</div>
 		            </div>
 			  </div>
 	      </div>
@@ -395,15 +406,36 @@
         </div>
     </footer>
     
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     
-     <script>
+    <script>
         $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-         });
+            $("#mycarousel").carousel( { interval: 2000 } );
+                          $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+                        $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
+        });
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#loginButton").click(function(){
+                $("#loginModal").modal("toggle");
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#reserveButton").click(function(){
+                $("#ReservationModal").modal("toggle");
+            });
+        });
     </script>
 
 </body>
