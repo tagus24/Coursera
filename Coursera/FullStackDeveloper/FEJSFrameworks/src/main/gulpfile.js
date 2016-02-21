@@ -24,13 +24,13 @@ var gulp = require('gulp'),
 	});
 
 	gulp.task('usemin',['jshint'], function () {
-	  return gulp.src('./webapp/**/*.html')
-		  .pipe(usemin({
-			css:[minifycss(),rev()],
-			js: [ngannotate(),uglify(),rev()]
-		  }))
-		  .pipe(gulp.dest('dist/'));
-	});
+		  return gulp.src('./webapp/**/*.html')
+			  .pipe(usemin({
+				css:[minifycss(),rev()],
+				js: [ngannotate(),uglify(),rev()]
+			  }))
+			  .pipe(gulp.dest('dist/'));
+		});
 
 // Images
 gulp.task('imagemin', function() {
@@ -65,10 +65,11 @@ gulp.task('browser-sync', ['default'], function () {
       'dist/**/*'
    ];
 
-   browserSync.init(files, {
+    browserSync.init(files, {
       server: {
          baseDir: "dist",
-         index: "index.html"
+         index: "index.html",
+		 port: 4000
       }
    });
         // Watch any files in dist/, reload on change
