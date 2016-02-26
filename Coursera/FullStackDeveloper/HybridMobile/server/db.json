@@ -6,7 +6,7 @@
       "image": "images/uthapizza.png",
       "category": "mains",
       "label": "Hot",
-      "price": 4.99,
+      "price": "4.99",
       "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
       "comments": [
         {
@@ -38,24 +38,6 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
-        },
-        {
-          "rating": 5,
-          "comment": "",
-          "author": "",
-          "date": "2016-02-21T13:50:37.812Z"
-        },
-        {
-          "rating": "3",
-          "comment": "Not to bad!",
-          "author": "Tiago",
-          "date": "2016-02-21T14:03:06.307Z"
-        },
-        {
-          "rating": "2",
-          "comment": "Nooo",
-          "author": "TP",
-          "date": "2016-02-21T17:46:35.985Z"
         }
       ]
     },
@@ -227,32 +209,5 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": [
-    {
-      "mychannel": "",
-      "firstName": "tiago",
-      "lastName": "asdasd",
-      "agree": false,
-      "email": "a@a",
-      "tel": {
-        "areaCode": "09",
-        "number": "2323232"
-      },
-      "comments": "asasas",
-      "id": 1
-    },
-    {
-      "mychannel": "tel",
-      "firstName": "asdasa",
-      "lastName": "asasas",
-      "agree": true,
-      "email": "a@a",
-      "tel": {
-        "areaCode": "032",
-        "number": "121212"
-      },
-      "comments": "asasasas",
-      "id": 2
-    }
-  ]
+  "feedback": []
 }
