@@ -8,6 +8,8 @@ tmp/
 local.properties
 .settings/
 .loadpath
+node_modules
+mongodb
 
 # Eclipse Core
 .project

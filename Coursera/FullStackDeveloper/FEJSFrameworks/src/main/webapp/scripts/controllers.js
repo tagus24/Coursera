@@ -11,7 +11,7 @@ angular.module('confusionApp')
             $scope.showMenu = false;
             $scope.message = "Loading ...";
                         
-            menuFactory.getDishes().query(
+            menuFactory.query(
                 function(response) {
                     $scope.dishes = response;
                     $scope.showMenu = true;
@@ -85,7 +85,7 @@ angular.module('confusionApp')
             $scope.showDish = false;
             $scope.message="Loading ...";
                         
-            $scope.dish = menuFactory.getDishes().get({id:parseInt($stateParams.id,10)})
+            $scope.dish = menuFactory.get({id:parseInt($stateParams.id,10)})
             .$promise.then(
                             function(response){
                                 $scope.dish = response;
@@ -107,64 +107,44 @@ angular.module('confusionApp')
                 console.log($scope.comment);
                 $scope.dish.comments.push($scope.comment);
 
-                menuFactory.getDishes().update({id:$scope.dish.id},$scope.dish);
+                menuFactory.update({id:$scope.dish.id},$scope.dish);
                 $scope.commentForm.$setPristine();
                 $scope.comment = {rating:5, comment:"", author:"", date:""};
             };
             
         }])
-        
-        
-        
 
         // implement the IndexController and About Controller here
-        
-        
-         .controller('IndexController', ['$scope', '$stateParams', 'menuFactory', 'corporateFactory',
-                                         function($scope, $stateParams, menuFactory, corporateFactory) {
 
-        	 $scope.showDish = false;
-             $scope.message="Loading ...";
-             $scope.dish = menuFactory.getDishes().get({id:0})
-             .$promise.then(
-                 function(response){
-                     $scope.dish = response;
-                     $scope.showDish = true;
-                 },
-                 function(response) {
-                     $scope.message = "Error: "+response.status + " " + response.statusText;
-                 }
-             );
-             
-             
-             $scope.showPromotion = false;
-             $scope.message="Loading ...";
-             $scope.promotion = menuFactory.getPromotions().get({id:0})
-             .$promise.then(
-                 function(response){
-                     $scope.promotion = response;
-                     $scope.showPromotion = true;
-                 },
-                 function(response) {
-                     $scope.message = "Error: "+response.status + " " + response.statusText;
-                 }
-             );
-            
-             
-             $scope.showLeader = false;
-             $scope.message="Loading ...";
-             $scope.leader = corporateFactory.getLeaders().get({id:3})
-             .$promise.then(
-                 function(response){
-                     $scope.leader = response;
-                     $scope.showLeader = true;
-                 },
-                 function(response) {
-                     $scope.message = "Error: "+response.status + " " + response.statusText;
-                 }
-             );
+        .controller('IndexController', ['$scope', 'menuFactory', 'promotionFactory', 'corporateFactory', 'baseURL', 
+			function ($scope, menuFactory, promotionFactory, corporateFactory, baseURL) {
 
-        }])
+			$scope.baseURL = baseURL;
+			$scope.leader = corporateFactory.get({
+				id: 3
+			});
+
+			$scope.showDish = false;
+			$scope.message = "Loading ...";
+
+			$scope.dish = menuFactory.get({
+					id: 0
+				})
+				.$promise.then(
+					function (response) {
+						$scope.dish = response;
+						$scope.showDish = true;
+					},
+					function (response) {
+						$scope.message = "Error: " + response.status + " " + response.statusText;
+					}
+				);
+
+			$scope.promotion = promotionFactory.get({
+				id: 0
+			});
+
+		}])
         
         .controller('AboutController', ['$scope', 'corporateFactory', 
                                         function($scope, corporateFactory){
@@ -183,6 +163,8 @@ angular.module('confusionApp')
            
              
         }])
+		
+		
 
 
 ;
